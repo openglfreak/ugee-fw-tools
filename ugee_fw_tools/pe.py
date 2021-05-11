@@ -5,6 +5,7 @@ def _decode_pe_int(data):
     return int.from_bytes(data, byteorder='little')
 
 
+# pylint: disable=too-many-locals
 def extract_data_from_exe(binary, virtual_address, length):
     if binary[0:2] != b'MZ':
         raise ValueError('Missing MZ magic number')
